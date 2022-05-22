@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
     {
+    public GameObject movePointGameObject;
     [SerializeField] Transform movePoint;
     float speed = 5.0f;
+    float xBorder = 12;
+
 
     public float timeHold = 2;
     bool onPos;
@@ -24,9 +27,16 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
         {
+        if (transform.position.x < -xBorder)
+            {
+            Destroy(gameObject);
+            Destroy(movePointGameObject);
+            }
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
-StartCoroutine(ObjectMover(timeHold));
+        StartCoroutine(ObjectMover(timeHold));
         }
+
+
 
    IEnumerator ObjectMover(float timehold)
         {
