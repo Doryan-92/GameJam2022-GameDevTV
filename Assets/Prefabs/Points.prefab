@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 8310938738269756463}
   - component: {fileID: 8310938738269756462}
   - component: {fileID: 7571371838218559049}
+  - component: {fileID: -8835597266478010268}
+  - component: {fileID: 8285648867849435908}
   m_Layer: 0
-  m_Name: Buff
-  m_TagString: Enemy
+  m_Name: Points
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +130,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8835597266478010268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310938738269756457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f844d46be8b3ee04d9d12450c14129b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glyphType: 2
+  player: {fileID: 0}
+  scoreToAdd: 0
+--- !u!50 &8285648867849435908
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310938738269756457}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &8310938738714407321
 GameObject:
   m_ObjectHideFlags: 0

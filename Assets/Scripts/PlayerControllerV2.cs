@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class PlayerControllerV2 : MonoBehaviour
     {
+
+    [Header("Movement")]
     public int moveSpace = 2;
     public Transform playerMovePoint;
     [SerializeField] float speed = 10.0f;
-    public bool gameOver = false;
     public LayerMask whatStopMovement;
+    
+    [Header("Game State")]
+    public bool gameOver = false;
+
+    [Header("Inventory")]
+    public int health;
+    public int points;
 
     public Animator anim;
 
 
     void Start()
         {
+        health = 3;
+        points = 0;
         playerMovePoint.parent = null; //per definire che l'oggetto assegnato non è più un child
         }
 
@@ -53,12 +63,5 @@ public class PlayerControllerV2 : MonoBehaviour
             }
         }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-        {
-        if(collision.CompareTag("Enemy"))
-            {
-            Debug.Log("Destroy that fucker!!!");
-            }
-        }
 
     }
