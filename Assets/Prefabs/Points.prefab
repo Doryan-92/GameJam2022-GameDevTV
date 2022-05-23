@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glyphType: 2
   player: {fileID: 0}
-  scoreToAdd: 0
+  scoreToAdd: 500
 --- !u!50 &8285648867849435908
 Rigidbody2D:
   serializedVersion: 4

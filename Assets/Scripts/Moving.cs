@@ -32,8 +32,12 @@ public class Moving : MonoBehaviour
             Destroy(gameObject);
             Destroy(movePointGameObject);
             }
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
-        StartCoroutine(ObjectMover(timeHold));
+        if(playerController.gameOver == false)
+            {
+            transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
+            StartCoroutine(ObjectMover(timeHold));
+            }
+
         }
 
 
