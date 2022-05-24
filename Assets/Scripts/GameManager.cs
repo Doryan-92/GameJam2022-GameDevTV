@@ -4,18 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.IO;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GameManager : MonoBehaviour
 {
-    PlayerControllerV2 playerController;
+    public static GameManager Instance;
+
+    [Header("Game Mechanics")]
     public int health;
     public int score;
-    public int highScore;
-    public TextMeshProUGUI scoreText;
-    public GameObject gameoverText;
-    public GameObject gameover2Text;
+    public static int highScore;
 
-    public static GameManager Instance;
+    [Header("UI")]
+
+    public TextMeshProUGUI highScoreText;
+    public GameObject difficultyButtons;
+
 
     private void Awake()
         {
@@ -26,54 +33,90 @@ public class GameManager : MonoBehaviour
             }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        LoadHighScore();
+        LoadScore();
         }
-   
+
+    private void Start()
+        {
+        difficultyButtons = GameObject.Find("Difficulty Buttons");
+        highScoreText = FindObjectOfType<TextMeshProUGUI>();
+        highScoreText.text = "" + highScore + "";
+        }
     [System.Serializable] //Serve per convertire in JSON
     class SaveData
         {
         public int score;
+        public int highScore;
         }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        score = 0;
-        playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
-    }
+    public void SaveScore()
+        {
+        SaveData data = new SaveData();
+        data.score = score;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (health == 0)
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        }
+
+    public void SaveHighScore()
+        {
+        SaveData data = new SaveData();
+        data.highScore = highScore;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+
+        }
+
+    public void LoadScore()
+        {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
             {
-            GameOver();
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            score = data.score;
             }
-    }
-
-    public void UpdateScore(int scoreToAdd)
-        {
-        score += scoreToAdd;
-        scoreText.text = "Score: " + score;
         }
 
-    public void UpLife(int healthToAdd)
+    public void LoadHighScore()
         {
-        health += healthToAdd;
-        }
-
-    public void DownLife(int healthToAdd)
-        {
-        health -= healthToAdd;
-        }
-
-public void GameOver()
-        {
-        playerController.gameOver = true;
-        if (score > highScore)
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
             {
-            highScore = score;
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            highScore = data.highScore;
             }
-        gameoverText.SetActive(true);
-        gameover2Text.SetActive(true);
+        }
+
+
+    public void StartPress()
+        {
+        difficultyButtons.SetActive(true);
+        }
+
+    public void StartNew()
+        {
+        difficultyButtons.SetActive(false);
+        SceneManager.LoadScene(1);
+        }
+
+
+
+    public void Exit()
+        {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit(); // original code to quit Unity player
+#endif
+
         }
     }

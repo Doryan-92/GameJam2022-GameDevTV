@@ -11,6 +11,8 @@ public class Collectable : MonoBehaviour
 
     PlayerControllerV2 playerController;
     GameManager gameManager;
+    PlayManager playManager;
+
 
 
     // Start is called before the first frame update
@@ -18,7 +20,8 @@ public class Collectable : MonoBehaviour
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
+        playManager = GameObject.Find("PlayManager").GetComponent<PlayManager>();
+        }
 
     // Update is called once per frame
     void Update()
@@ -34,13 +37,13 @@ public class Collectable : MonoBehaviour
                 {
                 if (gameManager.health < 3)
                     {
-                    gameManager.UpLife(healthToAdd);
+                    playManager.UpLife(healthToAdd);
                     Destroy(gameObject);
                     }
 
                 else if (gameManager.health == 3)
                     {
-                    gameManager.UpdateScore(scoreToAdd);
+                    playManager.UpdateScore(scoreToAdd);
                     Destroy(gameObject);
                     }
  
@@ -48,13 +51,13 @@ public class Collectable : MonoBehaviour
           
             if (glyphType == GlyphType.Damage)
                 {
-                gameManager.DownLife(healthToAdd);
+                playManager.DownLife(healthToAdd);
                 Destroy(gameObject);
                 }
            
             if (glyphType == GlyphType.Point)
                 {
-                gameManager.UpdateScore(scoreToAdd);
+                playManager.UpdateScore(scoreToAdd);
                 Destroy(gameObject);
                 }
             }
