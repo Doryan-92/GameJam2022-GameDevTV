@@ -8,20 +8,26 @@ using System.IO;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+[DefaultExecutionOrder(1000)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public GameObject gameoverUI;
+    public TextMeshProUGUI scoreText;
+    PlayerControllerV2 playerController;
+    public GameObject player;
 
     [Header("Game Mechanics")]
     public int health;
     public int score;
-    public static int highScore;
+    public int highScore;
 
     [Header("UI")]
 
     public TextMeshProUGUI highScoreText;
     public GameObject difficultyButtons;
+    public GameObject mainMenuUI;
+    public GameObject playUI;
 
 
     private void Awake()
@@ -40,15 +46,37 @@ public class GameManager : MonoBehaviour
 
     private void Start()
         {
-        difficultyButtons = GameObject.Find("Difficulty Buttons");
-        highScoreText = FindObjectOfType<TextMeshProUGUI>();
-        highScoreText.text = "" + highScore + "";
+        playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
+        player.SetActive(false);
+        scoreText.text = "Score: " + score;
+        //highScoreText.text = "" + highScore + "";
         }
     [System.Serializable] //Serve per convertire in JSON
     class SaveData
         {
         public int score;
         public int highScore;
+        }
+
+    void Update()
+        {
+        if (health == 0)
+            {
+            GameOver();
+            }
+        if (score >= highScore)
+            {
+            highScoreText.text = "Highscore" + highScore;
+            }
+        }
+    public void UpLife(int healthToAdd)
+        {
+        health += healthToAdd;
+        }
+
+    public void DownLife(int healthToAdd)
+        {
+        health -= healthToAdd;
         }
 
     public void SaveScore()
@@ -104,10 +132,40 @@ public class GameManager : MonoBehaviour
 
     public void StartNew()
         {
-        difficultyButtons.SetActive(false);
+        SceneManager.LoadScene(1);
+        player.SetActive(true);
+        playUI.SetActive(true);
+        mainMenuUI.SetActive(false);
+
+        }
+
+    public void ReloadScene()
+        {
+        health = 3;
+        score = 0;
         SceneManager.LoadScene(1);
         }
 
+    public void UpdateScore(int scoreToAdd)
+        {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+        }
+
+
+    public void GameOver()
+        {
+        playerController.gameOver = true;
+        if (score > highScore)
+            {
+            highScore = score;
+            }
+        SaveScore();
+        SaveHighScore();
+        gameoverUI.SetActive(true);
+
+        
+        }
 
 
     public void Exit()

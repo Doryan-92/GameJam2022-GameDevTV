@@ -4,37 +4,43 @@ using UnityEngine;
 
 public class PlayerControllerV2 : MonoBehaviour
     {
+    public static PlayerControllerV2 Instance;
 
     [Header("Movement")]
     public int moveSpace = 2;
     public Transform playerMovePoint;
     [SerializeField] float speed = 10.0f;
     public LayerMask whatStopMovement;
-    
+
     [Header("Game State")]
     public bool gameOver = false;
 
-    [Header("Inventory")]
-    
-
-
     public Animator anim;
 
+    private void Awake()
+        {
+        if (Instance != null)
+            {
+            Destroy(gameObject);
+            return;
+            }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        }
 
     void Start()
         {
-
+        GameManager.Instance.health = 3;
         playerMovePoint.parent = null; //per definire che l'oggetto assegnato non è più un child
         }
 
     // Update is called once per frame
     void Update()
         {
-        if (gameOver == false) 
-       {
-        //Grid Movement
         transform.position = Vector3.MoveTowards(transform.position, playerMovePoint.position, speed * Time.deltaTime);
-
+        if (gameOver == false)
+            {
+            //Grid Movement
             if (Vector3.Distance(transform.position, playerMovePoint.position) <= .05f)
                 {
                 if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
@@ -54,16 +60,8 @@ public class PlayerControllerV2 : MonoBehaviour
 
                     }
                 }
-            //anim.SetBool("moving", false);
-            }
 
-    
 
-        else
-            {
-            //anim.SetBool("moving", true);
             }
         }
-
-
     }

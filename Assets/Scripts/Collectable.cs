@@ -9,18 +9,15 @@ public class Collectable : MonoBehaviour
     public int scoreToAdd;
     public int healthToAdd;
 
-    PlayerControllerV2 playerController;
     GameManager gameManager;
-    PlayManager playManager;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        playManager = GameObject.Find("PlayManager").GetComponent<PlayManager>();
         }
 
     // Update is called once per frame
@@ -31,19 +28,20 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
         {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
             {
+            Debug.Log("Hitted!");
             if(glyphType == GlyphType.Life)
                 {
                 if (gameManager.health < 3)
                     {
-                    playManager.UpLife(healthToAdd);
+                    GameManager.Instance.UpLife(healthToAdd);
                     Destroy(gameObject);
                     }
 
                 else if (gameManager.health == 3)
                     {
-                    playManager.UpdateScore(scoreToAdd);
+                    GameManager.Instance.UpdateScore(scoreToAdd);
                     Destroy(gameObject);
                     }
  
@@ -51,13 +49,13 @@ public class Collectable : MonoBehaviour
           
             if (glyphType == GlyphType.Damage)
                 {
-                playManager.DownLife(healthToAdd);
+                GameManager.Instance.DownLife(healthToAdd);
                 Destroy(gameObject);
                 }
            
             if (glyphType == GlyphType.Point)
                 {
-                playManager.UpdateScore(scoreToAdd);
+                GameManager.Instance.UpdateScore(scoreToAdd);
                 Destroy(gameObject);
                 }
             }
