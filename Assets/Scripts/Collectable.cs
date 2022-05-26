@@ -8,6 +8,7 @@ public class Collectable : MonoBehaviour
     [SerializeField] GlyphType glyphType;
     public int scoreToAdd;
     public int healthToAdd;
+    public GameObject player;
 
     GameManager gameManager;
 
@@ -26,11 +27,11 @@ public class Collectable : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
         {
-        if (collision.CompareTag("Player"))
+        if (col.CompareTag("Player"))
             {
-            Debug.Log("Hitted!");
+        
             if(glyphType == GlyphType.Life)
                 {
                 if (gameManager.health < 3)
@@ -60,4 +61,5 @@ public class Collectable : MonoBehaviour
                 }
             }
         }
+
     }

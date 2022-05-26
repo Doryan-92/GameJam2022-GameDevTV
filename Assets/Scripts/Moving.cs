@@ -10,7 +10,7 @@ public class Moving : MonoBehaviour
     float xBorder = 12;
 
 
-    public float timeHold = 2;
+    public float timeHold;
     bool onPos;
 
     PlayerControllerV2 playerController;
@@ -19,6 +19,7 @@ public class Moving : MonoBehaviour
     // Start is called before the first frame update
     void Start()
         {
+        timeHold = 1.75f;
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
         movePoint.parent = null;
         onPos = true;

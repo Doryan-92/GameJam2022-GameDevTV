@@ -5,9 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] glyphPrefabs;
+    GameManager gameManager;
     PlayerControllerV2 playerController;
-    float spawnDelay = 2;
-    float spawnInterval;
+    float spawnDelay;
+    public float spawnInterval; //Normal = 2 Easy = 3 Hard = 1.2
     float spawnPosX = 12;
     int posY1 = 4;
     int posY2 = 2;
@@ -18,8 +19,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnInterval = 1.75f;
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
-        spawnInterval = 2;
         InvokeRepeating("SpawnObject", spawnDelay, spawnInterval);
     }
 

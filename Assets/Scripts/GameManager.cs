@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     PlayerControllerV2 playerController;
     public GameObject player;
+    public Image lifeImage;
 
     [Header("Game Mechanics")]
     public int health;
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
 
     public TextMeshProUGUI highScoreText;
-    public GameObject difficultyButtons;
     public GameObject mainMenuUI;
     public GameObject playUI;
 
@@ -47,8 +47,10 @@ public class GameManager : MonoBehaviour
     private void Start()
         {
         playerController = GameObject.Find("Player").GetComponent<PlayerControllerV2>();
+    
         player.SetActive(false);
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score:    " + score;
+        highScoreText.text = "Highscore:" + highScore;
         //highScoreText.text = "" + highScore + "";
         }
     [System.Serializable] //Serve per convertire in JSON
@@ -60,13 +62,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
         {
-        if (health == 0)
+        if (health == 3)
+            lifeImage.fillAmount = 1;
+        else if (health == 2)
+            lifeImage.fillAmount = 0.66f;
+        else if (health == 1)
+            lifeImage.fillAmount = 0.33f;
+        else if (health == 0)
             {
+            lifeImage.fillAmount = 0;
             GameOver();
             }
         if (score >= highScore)
             {
-            highScoreText.text = "Highscore" + highScore;
+            highScoreText.text = "Highscore:" + highScore;
             }
         }
     public void UpLife(int healthToAdd)
@@ -125,14 +134,12 @@ public class GameManager : MonoBehaviour
         }
 
 
-    public void StartPress()
-        {
-        difficultyButtons.SetActive(true);
-        }
 
     public void StartNew()
         {
+
         SceneManager.LoadScene(1);
+
         player.SetActive(true);
         playUI.SetActive(true);
         mainMenuUI.SetActive(false);
@@ -143,13 +150,20 @@ public class GameManager : MonoBehaviour
         {
         health = 3;
         score = 0;
+        scoreText.text = "Score:    " + score;
+        playerController.gameOver = false;
+        playerController.playerMovePoint.transform.position = new Vector3(-8, 0, 0);
+        player.transform.position = new Vector3(-8, 0, 0);
+        gameoverUI.SetActive(false);
         SceneManager.LoadScene(1);
         }
 
     public void UpdateScore(int scoreToAdd)
         {
         score += scoreToAdd;
+      
         scoreText.text = "Score: " + score;
+
         }
 
 

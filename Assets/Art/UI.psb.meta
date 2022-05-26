@@ -98,7 +98,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 183
+      x: 601
       y: 4
       width: 203
       height: 222
@@ -111,7 +111,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -315, y: -1383}
+    uvTransform: {x: 558, y: -1384}
   - name: LifeUI
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -121,7 +121,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 171
+      width: 591
       height: 328
     spriteID: 97ae589188a20cc488819842012ef72f
     spriteBone: []
@@ -224,7 +224,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: fb90099c871ebbe43a392e3cc8c3cd61
     layerID: 9
-    mosaicPosition: {x: 183, y: 4}
+    mosaicPosition: {x: 601, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
