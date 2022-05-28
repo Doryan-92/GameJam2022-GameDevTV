@@ -98,7 +98,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 601
+      x: 3656
       y: 4
       width: 203
       height: 222
@@ -111,19 +111,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 558, y: -1384}
-  - name: LifeUI
+    uvTransform: {x: 2234, y: -1505}
+  - name: colors
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 3867
       y: 4
-      width: 591
-      height: 328
-    spriteID: 97ae589188a20cc488819842012ef72f
+      width: 104
+      height: 312
+    spriteID: e7ba66ae70f702e4ba4b4fb609c70a30
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -132,7 +132,175 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -745, y: -1477}
+    uvTransform: {x: 2799, y: -1788}
+  - name: Colonna
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 362
+      y: 1732
+      width: 292
+      height: 1501
+    spriteID: 87a38e41edf1ac44da14e685584201ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -706, y: 1503}
+  - name: Bottom
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1450
+      width: 2632
+      height: 274
+    spriteID: 96e622bea0784054b8249c1ec5280058
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2119, y: 1450}
+  - name: lato
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1732
+      width: 350
+      height: 1776
+    spriteID: fbfaf8d002b39154a9cfbb80144cc9eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -4858, y: 1458}
+  - name: Top
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1092
+      width: 2632
+      height: 350
+    spriteID: daf29de27ed19f648997465061291d5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2119, y: 784}
+  - name: Sfondo play
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1920
+      height: 1080
+    spriteID: c8a9b3d384e861c4aac89e4b5035f97d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2876, y: -1076}
+  - name: Tile
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 4
+      width: 496
+      height: 496
+    spriteID: 5c7170661b0f0cf4583a13644187075a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 57, y: -1642}
+  - name: LifeUI
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3059
+      y: 4
+      width: 589
+      height: 328
+    spriteID: cf794283fcf276c449a7732313ff0b96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1830, y: -1810}
+  - name: LifeUIBack
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2436
+      y: 4
+      width: 615
+      height: 354
+    spriteID: b6c1f201ce0514646bead9965e227f1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1220, y: -1797}
   characterData:
     bones: []
     parts: []
@@ -224,7 +392,87 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: fb90099c871ebbe43a392e3cc8c3cd61
     layerID: 9
-    mosaicPosition: {x: 601, y: 4}
+    mosaicPosition: {x: 3656, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: colors
+    spriteName: colors
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e7ba66ae70f702e4ba4b4fb609c70a30
+    layerID: 15
+    mosaicPosition: {x: 3867, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Colonna
+    spriteName: Colonna
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 87a38e41edf1ac44da14e685584201ce
+    layerID: 72
+    mosaicPosition: {x: 362, y: 1732}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Obelisco
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 354c832aa30c4154680eff1e047b0b44
+    layerID: 33
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Bottom
+    spriteName: Bottom
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 96e622bea0784054b8249c1ec5280058
+    layerID: 80
+    mosaicPosition: {x: 4, y: 1450}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: lato
+    spriteName: lato
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fbfaf8d002b39154a9cfbb80144cc9eb
+    layerID: 81
+    mosaicPosition: {x: 4, y: 1732}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Top
+    spriteName: Top
+    isGroup: 0
+    parentIndex: -1
+    spriteID: daf29de27ed19f648997465061291d5a
+    layerID: 79
+    mosaicPosition: {x: 4, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Sfondo play
+    spriteName: Sfondo play
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c8a9b3d384e861c4aac89e4b5035f97d
+    layerID: 25
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Tile
+    spriteName: Tile
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5c7170661b0f0cf4583a13644187075a
+    layerID: 24
+    mosaicPosition: {x: 1932, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -232,9 +480,19 @@ ScriptedImporter:
     spriteName: LifeUI
     isGroup: 0
     parentIndex: -1
-    spriteID: 97ae589188a20cc488819842012ef72f
-    layerID: 8
-    mosaicPosition: {x: 4, y: 4}
+    spriteID: cf794283fcf276c449a7732313ff0b96
+    layerID: 94
+    mosaicPosition: {x: 3059, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LifeUIBack
+    spriteName: LifeUIBack
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b6c1f201ce0514646bead9965e227f1d
+    layerID: 95
+    mosaicPosition: {x: 2436, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1

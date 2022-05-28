@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     PlayerControllerV2 playerController;
     float spawnDelay;
     public float spawnInterval; //Normal = 2 Easy = 3 Hard = 1.2
-    float spawnPosX = 12;
+    float spawnPosX = 10;
     int posY1 = 4;
     int posY2 = 2;
     int posY3 = 0;
