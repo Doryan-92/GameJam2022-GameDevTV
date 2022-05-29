@@ -15,7 +15,11 @@ public class PlayerControllerV2 : MonoBehaviour
     [Header("Game State")]
     public bool gameOver = false;
 
-    public Animator anim;
+    [Header("Sound")]
+    AudioSource audioSource;
+    [SerializeField] AudioClip audioPoint;
+    [SerializeField] AudioClip audioDamage;
+    [SerializeField] AudioClip audioLife;
 
     private void Awake()
         {
@@ -31,6 +35,7 @@ public class PlayerControllerV2 : MonoBehaviour
     void Start()
         {
         GameManager.Instance.health = 3;
+        audioSource = GetComponent<AudioSource>();
         playerMovePoint.parent = null; //per definire che l'oggetto assegnato non è più un child
         }
 
@@ -64,5 +69,13 @@ public class PlayerControllerV2 : MonoBehaviour
 
             }
         }
+    private void OnTriggerEnter2D(Collider2D col)
+        {
+        if (col.CompareTag("Points"))
+            {
+            audioSource.PlayOneShot(audioPoint,0.5f);
+            }
 
+
+        }
     }

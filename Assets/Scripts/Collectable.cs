@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
 {
     enum GlyphType {Life, Damage, Point};
     [SerializeField] GlyphType glyphType;
+
     public int scoreToAdd;
     public int healthToAdd;
     public GameObject player;
@@ -19,6 +20,7 @@ public class Collectable : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         }
 
     // Update is called once per frame
