@@ -75,7 +75,14 @@ public class PlayerControllerV2 : MonoBehaviour
             {
             audioSource.PlayOneShot(audioPoint,0.5f);
             }
-
+        if (col.CompareTag("Enemy"))
+            {
+            audioSource.PlayOneShot(audioDamage, 0.5f);
+            }
+        if (col.CompareTag("Life"))
+            {
+            audioSource.PlayOneShot(audioLife, 0.5f);
+            }
 
         }
     }

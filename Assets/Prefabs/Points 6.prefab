@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glyphType: 2
-  scoreToAdd: 500
+  scoreToAdd: 1000
   healthToAdd: 0
   player: {fileID: 0}
 --- !u!50 &8285648867849435908

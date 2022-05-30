@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2205458951609806555}
   m_Layer: 0
   m_Name: Life
-  m_TagString: Untagged
+  m_TagString: Life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glyphType: 0
-  scoreToAdd: 2000
+  scoreToAdd: 5000
   healthToAdd: 1
   player: {fileID: 0}
 --- !u!50 &2205458951609806555

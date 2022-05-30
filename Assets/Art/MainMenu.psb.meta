@@ -91,28 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Livello 2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1036
-      y: 4
-      width: 139
-      height: 576
-    spriteID: 21b6d599d32f62f4b85a2a7a6d391eaf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 1036, y: 4}
-  - name: Livello 1
+  - name: Sfondo
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -123,7 +102,7 @@ ScriptedImporter:
       y: 4
       width: 1024
       height: 576
-    spriteID: f254ed9ec945dc749804c0ea6c725d39
+    spriteID: 60b699c55e462084a947f48be3310ec5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,22 +197,72 @@ ScriptedImporter:
   resliceFromLayer: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Gruppo 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6e2216a9a29b1c64ebcb5ac611f84675
+    layerID: 10
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
   - name: Livello 2
     spriteName: Livello 2
     isGroup: 0
-    parentIndex: -1
+    parentIndex: 0
     spriteID: 21b6d599d32f62f4b85a2a7a6d391eaf
     layerID: 4
+    mosaicPosition: {x: 1419, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Livello 5
+    spriteName: 
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 01df9643b527dc84cba4b1e8ec145059
+    layerID: 8
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Livello 4
+    spriteName: Livello 4
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 692cbb0ea26ca564798fb5bff2764245
+    layerID: 7
     mosaicPosition: {x: 1036, y: 4}
     flatten: 0
-    isImported: 1
+    isImported: 0
+    isVisible: 0
+  - name: Livello 3
+    spriteName: Livello 3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3689bb0faff9fc14b86aeaf00827e7fe
+    layerID: 5
+    mosaicPosition: {x: 1419, y: 588}
+    flatten: 0
+    isImported: 0
     isVisible: 1
   - name: Livello 1
     spriteName: Livello 1
     isGroup: 0
-    parentIndex: -1
+    parentIndex: 0
     spriteID: f254ed9ec945dc749804c0ea6c725d39
     layerID: 3
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Sfondo
+    spriteName: Sfondo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 60b699c55e462084a947f48be3310ec5
+    layerID: 22
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
